@@ -1,0 +1,59 @@
+
+entity FoodServiceProvider {
+	fullName String,
+	docProofName String,
+	docProofNo String,
+	address String,
+	contactNo String,
+    emailAddress String
+}
+
+entity FoodService {
+	name String,
+	rate Float,
+	startDate LocalDate,
+	endDate LocalDate
+}
+
+entity Menu {
+	name String,
+	serveDate LocalDate,
+	bookBeforeDate LocalDate,
+    cancelBeforeDate LocalDate
+}
+
+entity Item {
+	name String,
+    veg Boolean
+}
+
+entity MenuItem {
+	limited Boolean
+}
+
+entity Feedback {
+	comment String,
+    dateTime LocalDate
+}
+
+entity StaffOrder {
+}
+
+relationship OneToMany {
+	FoodServiceProvider to FoodService,
+    FoodService to Menu,
+    Menu to MenuItem,
+    Menu to Feedback,
+    StaffOrder to Menu
+}
+
+relationship ManyToOne {
+	MenuItem to Item
+}
+
+relationship ManyToMany {
+	StaffOrder{user} to User
+}
+
+paginate all with pagination
+service all with serviceImpl
