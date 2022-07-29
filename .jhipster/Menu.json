@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20220729132514",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "menu",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serveDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "bookBeforeDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "cancelBeforeDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Menu",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "menuItem",
+      "otherEntityRelationshipName": "menu",
+      "relationshipName": "menuItem",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "feedback",
+      "otherEntityRelationshipName": "menu",
+      "relationshipName": "feedback",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "foodService",
+      "otherEntityRelationshipName": "menu",
+      "relationshipName": "foodService",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "staffOrder",
+      "otherEntityRelationshipName": "menu",
+      "relationshipName": "staffOrder",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

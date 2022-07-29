@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="menuItem">
+      <h2 data-cy="menuItemDetailsHeading"><span jhiTranslate="ccmsApp.menuItem.detail.title">Menu Item</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ menuItem.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ccmsApp.menuItem.limited">Limited</span></dt>
+        <dd>
+          <span>{{ menuItem.limited }}</span>
+        </dd>
+        <dt><span jhiTranslate="ccmsApp.menuItem.item">Item</span></dt>
+        <dd>
+          <div *ngIf="menuItem.item">
+            <a [routerLink]="['/item', menuItem.item?.id, 'view']">{{ menuItem.item?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="ccmsApp.menuItem.menu">Menu</span></dt>
+        <dd>
+          <div *ngIf="menuItem.menu">
+            <a [routerLink]="['/menu', menuItem.menu?.id, 'view']">{{ menuItem.menu?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/menu-item', menuItem.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

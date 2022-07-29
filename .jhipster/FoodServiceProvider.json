@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220729132512",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "food_service_provider",
+  "fields": [
+    {
+      "fieldName": "fullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docProofName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docProofNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailAddress",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "FoodServiceProvider",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "foodService",
+      "otherEntityRelationshipName": "foodServiceProvider",
+      "relationshipName": "foodService",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

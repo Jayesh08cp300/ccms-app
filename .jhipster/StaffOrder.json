@@ -1,0 +1,29 @@
+{
+  "applications": "*",
+  "changelogDate": "20220729132518",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "staff_order",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StaffOrder",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "staffOrder",
+      "relationshipName": "menu",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "staffOrder",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

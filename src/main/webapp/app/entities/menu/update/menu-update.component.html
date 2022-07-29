@@ -1,0 +1,124 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-menu-heading" data-cy="MenuCreateUpdateHeading" jhiTranslate="ccmsApp.menu.home.createOrEditLabel">
+        Create or edit a Menu
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.serveDate" for="field_serveDate">Serve Date</label>
+          <div class="input-group">
+            <input
+              id="field_serveDate"
+              data-cy="serveDate"
+              type="text"
+              class="form-control"
+              name="serveDate"
+              ngbDatepicker
+              #serveDateDp="ngbDatepicker"
+              formControlName="serveDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="serveDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.bookBeforeDate" for="field_bookBeforeDate">Book Before Date</label>
+          <div class="input-group">
+            <input
+              id="field_bookBeforeDate"
+              data-cy="bookBeforeDate"
+              type="text"
+              class="form-control"
+              name="bookBeforeDate"
+              ngbDatepicker
+              #bookBeforeDateDp="ngbDatepicker"
+              formControlName="bookBeforeDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="bookBeforeDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.cancelBeforeDate" for="field_cancelBeforeDate">Cancel Before Date</label>
+          <div class="input-group">
+            <input
+              id="field_cancelBeforeDate"
+              data-cy="cancelBeforeDate"
+              type="text"
+              class="form-control"
+              name="cancelBeforeDate"
+              ngbDatepicker
+              #cancelBeforeDateDp="ngbDatepicker"
+              formControlName="cancelBeforeDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="cancelBeforeDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.foodService" for="field_foodService">Food Service</label>
+          <select class="form-control" id="field_foodService" data-cy="foodService" name="foodService" formControlName="foodService">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                foodServiceOption.id === editForm.get('foodService')!.value?.id ? editForm.get('foodService')!.value : foodServiceOption
+              "
+              *ngFor="let foodServiceOption of foodServicesSharedCollection; trackBy: trackFoodServiceById"
+            >
+              {{ foodServiceOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="ccmsApp.menu.staffOrder" for="field_staffOrder">Staff Order</label>
+          <select class="form-control" id="field_staffOrder" data-cy="staffOrder" name="staffOrder" formControlName="staffOrder">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                staffOrderOption.id === editForm.get('staffOrder')!.value?.id ? editForm.get('staffOrder')!.value : staffOrderOption
+              "
+              *ngFor="let staffOrderOption of staffOrdersSharedCollection; trackBy: trackStaffOrderById"
+            >
+              {{ staffOrderOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220729132517",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "feedback",
+  "fields": [
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateTime",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Feedback",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "feedback",
+      "relationshipName": "menu",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
