@@ -48,6 +48,20 @@ public class CacheConfiguration {
             createCache(cm, com.pmc.ccms.domain.User.class.getName());
             createCache(cm, com.pmc.ccms.domain.Authority.class.getName());
             createCache(cm, com.pmc.ccms.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.pmc.ccms.domain.FoodServiceProvider.class.getName());
+            createCache(cm, com.pmc.ccms.domain.FoodServiceProvider.class.getName() + ".foodServices");
+            createCache(cm, com.pmc.ccms.domain.FoodService.class.getName());
+            createCache(cm, com.pmc.ccms.domain.FoodService.class.getName() + ".menus");
+            createCache(cm, com.pmc.ccms.domain.Menu.class.getName());
+            createCache(cm, com.pmc.ccms.domain.Menu.class.getName() + ".menuItems");
+            createCache(cm, com.pmc.ccms.domain.Menu.class.getName() + ".feedbacks");
+            createCache(cm, com.pmc.ccms.domain.Item.class.getName());
+            createCache(cm, com.pmc.ccms.domain.Item.class.getName() + ".menuItems");
+            createCache(cm, com.pmc.ccms.domain.MenuItem.class.getName());
+            createCache(cm, com.pmc.ccms.domain.Feedback.class.getName());
+            createCache(cm, com.pmc.ccms.domain.StaffOrder.class.getName());
+            createCache(cm, com.pmc.ccms.domain.StaffOrder.class.getName() + ".menus");
+            createCache(cm, com.pmc.ccms.domain.StaffOrder.class.getName() + ".users");
             // jhipster-needle-ehcache-add-entry
         };
     }

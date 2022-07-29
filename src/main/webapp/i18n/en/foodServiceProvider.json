@@ -1,0 +1,30 @@
+{
+  "ccmsApp": {
+    "foodServiceProvider": {
+      "home": {
+        "title": "Food Service Providers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Food Service Provider",
+        "createOrEditLabel": "Create or edit a Food Service Provider",
+        "notFound": "No Food Service Providers found"
+      },
+      "created": "A new Food Service Provider is created with identifier {{ param }}",
+      "updated": "A Food Service Provider is updated with identifier {{ param }}",
+      "deleted": "A Food Service Provider is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Food Service Provider {{ id }}?"
+      },
+      "detail": {
+        "title": "Food Service Provider"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "docProofName": "Doc Proof Name",
+      "docProofNo": "Doc Proof No",
+      "address": "Address",
+      "contactNo": "Contact No",
+      "emailAddress": "Email Address",
+      "foodService": "Food Service"
+    }
+  }
+}

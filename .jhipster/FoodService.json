@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20220729132513",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "food_service",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "FoodService",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "otherEntityRelationshipName": "foodService",
+      "relationshipName": "menu",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "foodServiceProvider",
+      "otherEntityRelationshipName": "foodService",
+      "relationshipName": "foodServiceProvider",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

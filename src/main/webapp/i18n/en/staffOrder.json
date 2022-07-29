@@ -1,0 +1,25 @@
+{
+  "ccmsApp": {
+    "staffOrder": {
+      "home": {
+        "title": "Staff Orders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Staff Order",
+        "createOrEditLabel": "Create or edit a Staff Order",
+        "notFound": "No Staff Orders found"
+      },
+      "created": "A new Staff Order is created with identifier {{ param }}",
+      "updated": "A Staff Order is updated with identifier {{ param }}",
+      "deleted": "A Staff Order is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Staff Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Staff Order"
+      },
+      "id": "ID",
+      "menu": "Menu",
+      "user": "User"
+    }
+  }
+}
